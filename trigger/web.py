@@ -33,13 +33,21 @@ AllowedActions = ['both', 'publish', 'subscribe']
 # DHT Sensor properties
 DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 18
-led = LED(17)
+led = LED(17) # red
+led2 = LED(22)
 
 def blink(dur,iter):
     for x in range(iter):
         led.on()
         time.sleep(dur)
         led.off()
+        time.sleep(0.1)
+
+def blink2(dur,iter):
+    for x in range(iter):
+        led2.on()
+        time.sleep(dur)
+        led2.off()
         time.sleep(0.1)
 
 
@@ -50,7 +58,12 @@ def customCallback(client, userdata, message):
     print("from topic: ")
     print(message.topic)
     print("--------------\n\n")
-    blink(0.3,5)
+    payload = json.loads(message.payload)
+    power = payload['power']
+    if power == 'low':
+        blink(0.3,5)
+    else:
+        blink2(0.3,5)
     
     
 
