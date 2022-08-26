@@ -34,7 +34,7 @@ AllowedActions = ['both', 'publish', 'subscribe']
 DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 18
 led = LED(17) # red
-led2 = LED(22)
+led2 = LED(22) # green
 
 def blink(dur,iter):
     for x in range(iter):

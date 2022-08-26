@@ -15,24 +15,16 @@ import pytz
 AllowedActions = ['both', 'publish', 'subscribe']
 
 pir = MotionSensor(21)
-led = LED(17)
-led2 = LED(22)
-led3 = LED(23)
+led3 = LED(23) #white
 
 def blink(dur):
-    led.on()
-    time.sleep(dur)
-    led.off()
-    led2.on()
-    time.sleep(dur)
-    led2.off()
     led3.on()
     time.sleep(dur)
     led3.off()
 
 def detected():
-    for x in range(5):
-        blink(0.1)
+    for x in range(3):
+        blink(0.3)
 
 # Read in command-line parameters
 parser = argparse.ArgumentParser()
