@@ -40,10 +40,12 @@ led3 = LED(26) # yellow
 led_list = [led,led2,led3]
 
 def blink(dur,iter,idx):
+    l = led_list[idx]
+    print(type(l))
     for x in range(iter):
-        led_list[idx].on()
+        l.on()
         time.sleep(dur)
-        led_list[idx].on()
+        l.on()
         time.sleep(0.1)
 
 
