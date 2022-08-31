@@ -35,19 +35,15 @@ DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 18
 led = LED(17) # red
 led2 = LED(27) # green
+led3 = LED(26) # yellow
 
-def blink(dur,iter):
-    for x in range(iter):
-        led.on()
-        time.sleep(dur)
-        led.off()
-        time.sleep(0.1)
+led_list = [led,led2,led3]
 
-def blink2(dur,iter):
+def blink(dur,iter,idx):
     for x in range(iter):
-        led2.on()
+        led_list[idx].on()
         time.sleep(dur)
-        led2.off()
+        led_list[idx].on()
         time.sleep(0.1)
 
 
@@ -60,10 +56,12 @@ def customCallback(client, userdata, message):
     print("--------------\n\n")
     payload = json.loads(message.payload)
     power = payload['power']
-    if power == 'low':
-        blink(0.3,5)
+    if power.lower() == 'low':
+        blink(0.3,3,0)
+    elif power.lower() == 'high':
+        blink(0.3,3,1)
     else:
-        blink2(0.3,5)
+        blink(0.1,5,2)
     
     
 
