@@ -1,5 +1,5 @@
 from gpiozero import LED
-
+import time
 
 led = LED(17) # red
 led2 = LED(27) # green
