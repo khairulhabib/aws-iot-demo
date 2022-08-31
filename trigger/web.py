@@ -45,7 +45,7 @@ def blink(dur,iter,idx):
     for x in range(iter):
         l.on()
         time.sleep(dur)
-        l.on()
+        l.off()
         time.sleep(0.1)
 
 
