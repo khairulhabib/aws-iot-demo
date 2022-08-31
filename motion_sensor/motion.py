@@ -21,10 +21,11 @@ def blink(dur):
     led3.on()
     time.sleep(dur)
     led3.off()
+    time.sleep(0.1)
 
 def detected():
     for x in range(3):
-        blink(0.3)
+        blink(0.1)
 
 # Read in command-line parameters
 parser = argparse.ArgumentParser()
