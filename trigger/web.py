@@ -41,7 +41,6 @@ led_list = [led,led2,led3]
 
 def blink(dur,iter,idx):
     l = led_list[idx]
-    print(type(l))
     for x in range(iter):
         l.on()
         time.sleep(dur)
