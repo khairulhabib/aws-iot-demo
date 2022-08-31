@@ -61,6 +61,7 @@ def customCallback(client, userdata, message):
     elif power.lower() == 'high':
         blink(0.3,3,1)
     else:
+        print("got alert, should be yellow light ")
         blink(0.1,5,2)
     
     
