@@ -17,4 +17,7 @@ def blink(dur,iter,idx):
 
 blink(0.3,3,0)
 blink(0.3,3,1)
-blink(0.3,3,2)
+# blink(0.3,3,2)
+led3.on()
+time.sleep(1)
+led3.off()
