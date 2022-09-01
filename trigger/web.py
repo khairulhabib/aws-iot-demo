@@ -62,7 +62,7 @@ def customCallback(client, userdata, message):
         blink(0.3,3,1)
     else:
         print("got alert, should be yellow light ")
-        blink(0.1,5,2)
+        blink(0.5,30,2)
     
     
 
